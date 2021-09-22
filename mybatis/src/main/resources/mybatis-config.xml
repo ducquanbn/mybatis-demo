@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <typeAliases>
+        <typeAlias type="com.example.mybatis.Entity.taikhoan" alias="taikhoan" />
+        <typeAlias type="com.example.mybatis.Entity.chucvu" alias="chucvu"/>
+        <typeAlias type="com.example.mybatis.Entity.tk_cv" alias="tk_cv"/>
+    </typeAliases>
+
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC" />
+            <dataSource type="POOLED">
+                <property name="driver" value="org.postgresql.Driver"/>
+                <property name="url" value="jdbc:postgresql://localhost:5432/demoshop"/>
+                <property name="username" value="postgres"/>
+                <property name="password" value="123456"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <mappers>
+        <mapper resource="sql/TaiKhoanMapper.xml" />
+        <mapper resource="sql/ChucVuMapper.xml"/>
+        <mapper resource="sql/Tk_CvMapper.xml"/>
+    </mappers>
+</configuration>

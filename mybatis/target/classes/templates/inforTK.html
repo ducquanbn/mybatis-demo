@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Table</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+</head>
+<body>
+<div class="col" style="margin: auto;">
+    <div class="col-md-6" >
+        <label for="user">User</label>
+        <input type="text" class="form-control" id="user" th:value="${tk.getUsername()}">
+        <label for="user">Password</label>
+        <input type="password" class="form-control" id="pass" th:value="${tk.getPass()}">
+        <label for="slCV">Role</label>
+        <select id="slCV" class="form-select" aria-label="Default select example">
+            <option th:each="cv:${lstCV}" th:value="${cv.getIdcv()}" th:utext="${cv.getTencv()}" > </option>
+        </select>
+        <button id="insert" class="btn btn-primary">Alter</button>
+    </div>
+</div>
+<script src="/js/spript.js"></script>
+</body>
+</html>

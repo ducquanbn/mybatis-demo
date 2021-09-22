@@ -1,0 +1,23 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.mybatis.Mapper.Tk_CvMapper">
+
+    <resultMap id = "result" type = "tk_cv">
+        <result property = "id" column = "id"/>
+        <result property = "idtk" column = "idtk"/>
+        <result property = "idcv" column = "idcv"/>
+    </resultMap>
+
+    <select id="selectAll" resultMap="result" >
+        SELECT * FROM tk_cv;
+    </select>
+    <select id="DeleteByIDTK" parameterType="int"  >
+        DELETE FROM tk_cv where idtk=#{idtk};
+    </select>
+
+    <insert id="insert" parameterType="tk_cv" >
+        INSERT INTO tk_cv ( idtk, idcv ) VALUES ( #{idtk}, #{idcv});
+    </insert>
+
+</mapper>
